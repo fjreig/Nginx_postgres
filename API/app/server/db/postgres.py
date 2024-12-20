@@ -1,11 +1,5 @@
 import pandas as pd
-from datetime import datetime
 from json import loads, dumps
-from fastapi import HTTPException
-from typing import Optional
-import typing
-import base64
-import json
 from psycopg2 import connect
 from psycopg2 import OperationalError, errorcodes, errors
 import pandas as pd

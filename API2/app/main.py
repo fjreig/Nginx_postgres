@@ -1,14 +1,11 @@
 import uvicorn
-from fastapi import FastAPI, Body
-from fastapi.templating import Jinja2Templates
-from starlette.requests import Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.server.routes.Logs import router as Logs
 
 description = """
-Pavener API. 🚀
+API. 🚀
 """
 
 tags_metadata = [
@@ -20,16 +17,14 @@ tags_metadata = [
 
 app = FastAPI(
     root_path="/v2",
-    #docs_url=None, 
-    redoc_url=None,
-    title="PAPI",
+    title="API",
     description=description,
-    version="0.4",
+    version="0.1",
     terms_of_service="http://example.com/terms/",
     contact={
-        "name": "Pavener Servicios Energeticos SLU",
-        "url": "https://www.pavener.com/contacto/",
-        "email": "info@pavener.com",
+        "name": "API Prueba",
+        "url": "https://www.info.com",
+        "email": "info@info.com",
     },
     license_info={
         "name": "Apache 2.0",
