@@ -18,7 +18,7 @@ def selectSQL(sql):
     parsed = loads(result)
     return(parsed)
 
-def Informe_Mensual_Operario():
+def consulta1():
     sql = f"""select log_line from accesslog"""
     parse = selectSQL(sql)
     return(parse)

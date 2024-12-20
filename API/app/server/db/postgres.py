@@ -19,7 +19,7 @@ def selectSQL(sql):
     parsed = loads(result)
     return(parsed)
 
-def Informe_Mensual_Operario():
+def consulta1():
     sql = f"""select log_line from accesslog order by created_at desc limit 1"""
     parse = selectSQL(sql)
     return(parse)
