@@ -1,0 +1,10 @@
+.idea
+node_modules
+__pycache__
+
+/log
+
+# Ignore Python cache files
+__pycache__/
+**/__pycache__/
+*.pyc
