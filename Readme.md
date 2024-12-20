@@ -6,8 +6,11 @@
 |:----:|:----------:|:---------------------:|:------:|:-----------------------------------:|
 |  1   |  API       |  API Monitorización   |   -    |  [api](http://localhost:8080/v1/docs#/)  |
 |  2   |  API2      |  Servidor web         |   -    |  [api](http://localhost:8080/v2/docs#/)  |
-|  3   |  Nginx     |  Dashboards gráficas  |  80    |               -                     |
+|  3   |  Nginx     |  Dashboards gráficas  |  8080  |               -                     |
 |  4   |  Postgres  |  BBDD                 |  5432  |               -                     |
+
+
+## 1. Arrancar rsyslogd desde el contenedor nginx
 
 Una vez arrancado el nginx, proceder de la siguiente manera, para ejecutar el rsyslogd
 ```
