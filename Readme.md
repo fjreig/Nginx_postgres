@@ -2,13 +2,13 @@
 
 
 
-Una vez arrancado el nginx, proceder de la siguiente manera
+Una vez arrancado el nginx, proceder de la siguiente manera, para ejecutar el rsyslogd
 ```
 rsyslogd -f /etc/rsyslog.d/pgsql.conf -N1
 systemctl restart rsyslog.service
 ```
 
-Postreiormente se puede comprobar si se esta todo ok
+Postreiormente se puede comprobar si se esta todo con el siguiente comando
 ```
 tail -f /var/log/syslog
 ```
