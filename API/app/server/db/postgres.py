@@ -22,4 +22,4 @@ def selectSQL(sql):
 def consulta1():
     sql = f"""select log_line from accesslog order by created_at desc limit 1"""
     parse = selectSQL(sql)
-    return(parse)
+    return(parse[0])
