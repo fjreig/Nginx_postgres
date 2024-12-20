@@ -1,0 +1,6 @@
+FROM frreimon/nginx:1.1
+# install app
+COPY pgsql.conf /etc/rsyslog.d/
+# Service rsyslogd
+RUN rsyslogd -f /etc/rsyslog.d/pgsql.conf -N1
+RUN systemctl restart rsyslog.service

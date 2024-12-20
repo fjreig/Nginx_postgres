@@ -1,0 +1,40 @@
+services:
+  api:
+    container_name: api
+    image: frreimon/api:2.3
+    volumes:
+      - ./API/app:/code/app
+    env_file:
+      - .env
+  
+  api2:
+    container_name: api2
+    image: frreimon/api:2.3
+    volumes:
+      - ./API2/app:/code/app
+    env_file:
+      - .env
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    env_file:
+      - .env
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./log/nginx:/var/log/nginx
+      - ./nginx/pgsql.conf:/etc/rsyslog.d/51-mywebsite.conf
